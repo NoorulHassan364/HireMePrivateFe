@@ -1,0 +1,56 @@
+.job-detail-container-jb {
+  /* background-color: rgb(228, 228, 228); */
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.job-detail-main-jb {
+  width: 70%;
+  border: 1px solid rgb(182, 182, 182);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 10px;
+}
+
+.job-title-job-detail {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.job-detail-lists ul {
+  margin-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 50px;
+}
+
+.job-services-job-detail {
+  margin-top: 30px;
+}
+
+.job-applicant-job-detail {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(156, 59, 30);
+}
+
+@media (max-width: 800px) {
+  .job-detail-main-jb {
+    width: 100%;
+  }
+  .job-applicant-job-detail {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 550px) {
+  .job-applicant-job-detail {
+    font-size: 12px;
+  }
+  .job-title-job-detail {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}

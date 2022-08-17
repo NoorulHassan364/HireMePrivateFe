@@ -1,0 +1,148 @@
+@import "~antd/dist/antd.css";
+
+.main-ct {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+@media (max-width: 1285px) {
+  .main-ct {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.section-1-ct {
+  max-width: 800px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 15px;
+  height: 30rem;
+  width: 800px;
+  padding: 10px;
+  background-color: white;
+}
+
+.container-ct {
+  background-color: rgb(224, 224, 224);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section-2-ct {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-post {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  background-color: white;
+  height: 12rem;
+  width: 340px;
+  padding: 10px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 20px;
+}
+
+.job-post Button {
+  background-color: rgb(27, 62, 78);
+  color: white;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.book-sitter {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 340px;
+  height: 10rem;
+  padding: 10px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 20px;
+}
+
+/* @media (max-width: 1300px) {
+  .section-2-ct {
+    width: 80% !important;
+  }
+  .book-sitter {
+    width: auto;
+  }
+} */
+
+.avatar-book-sitter {
+  width: 120px;
+}
+
+.img-book-sitter {
+  margin: 2px;
+}
+
+.wrap-book-sitter Button {
+  background-color: rgb(27, 62, 78);
+  color: white;
+  border-radius: 10px;
+  width: 50%;
+  margin-top: 5px;
+}
+
+.handy-resource {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 15px;
+}
+
+.parent-ct {
+  width: 90%;
+  margin: 10px 0px 10px 0px;
+}
+
+@media (max-width: 425px) {
+  .parent-ct {
+    width: 100%;
+  }
+}
+
+.saftey-comes-first {
+  margin-top: 60px;
+}
+
+.saftey-main {
+  background-color: white;
+  border: 1px solid rgb(189, 189, 189);
+  text-align: center;
+  border-radius: 15px;
+  margin: 10px;
+  position: relative;
+  padding: 10px;
+}
+
+.saftey-icon {
+  margin-top: -50px;
+  text-align: center;
+  font-size: 62px;
+}
+
+.safety-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.saftey-description {
+  font-size: 17px;
+}
+
+@media (max-width: 375px) {
+  .ant-tabs-left {
+    padding-left: 0px !important;
+  }
+}

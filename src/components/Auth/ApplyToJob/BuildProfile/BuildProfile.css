@@ -1,0 +1,78 @@
+.steps-content {
+  width: 500px;
+  height: 100%;
+  min-height: 100vh;
+  /* min-height: 200px; */
+  /* margin-top: 16px; */
+  /* padding-top: 80px; */
+  text-align: center;
+  /* background-color: #fafafa; */
+  border: 1px dashed #e9e9e9;
+  border-radius: 2px;
+}
+
+@media (max-width: 640px) {
+  .steps-content {
+    width: auto;
+  }
+}
+
+.steps-action {
+  margin-top: 24px;
+}
+
+.build-profile {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("../../../../assets/images/care_9.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.build-profile-main {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  border-radius: 7px;
+  padding: 15px;
+  margin: 25px;
+}
+
+@media (max-width: 400px) {
+  .build-profile-main {
+    flex-direction: column;
+  }
+  .ant-steps-vertical {
+    display: none;
+  }
+}
+
+.steps {
+  max-width: 120px;
+}
+
+.profile-photo-job {
+  position: relative;
+  width: 110px;
+}
+
+.camera-icon-pro {
+  position: absolute;
+  bottom: 6px;
+  right: 3px;
+  background-color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.ant-upload-list {
+  display: none;
+}

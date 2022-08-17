@@ -1,0 +1,33 @@
+/* .post-job-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 220px;
+} */
+
+.post-job-card-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+}
+
+.post-jobs-card {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 15px;
+}
+
+.post-job-single-card {
+  width: 10rem;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 15px;
+  padding: 10px 5px 10px 5px;
+  cursor: pointer;
+}

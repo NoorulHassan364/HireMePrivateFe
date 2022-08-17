@@ -1,0 +1,118 @@
+.profile-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-cards-main {
+  width: 60%;
+  max-height: 150vh;
+  overflow-y: scroll;
+}
+
+@media (max-width: 1024px) {
+  .profile-cards-main {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-cards-main {
+    width: 95%;
+  }
+}
+
+.profile-card {
+  /* border: 1px solid black; */
+  margin: 22px 0px;
+  display: flex;
+}
+
+.profile-image {
+  width: 140px;
+  height: 140px;
+}
+
+@media (max-width: 611px) {
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.profile-address {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 611px) {
+  .profile-address {
+    font-size: 13px;
+  }
+}
+
+.profile-card-section-1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* border: 1px solid black; */
+}
+
+.profile-card-section-2 {
+  width: 100%;
+  /* border: 1px solid black; */
+  padding: 0px 8px;
+  cursor: pointer;
+}
+
+.address-rate {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  /* border: 1px solid black; */
+}
+
+@media (max-width: 491px) {
+  .address-rate {
+    display: block;
+    line-height: 0rem;
+  }
+}
+
+.hourly-exp-Availabilty {
+  /* border: 1px solid black; */
+}
+
+.hourly-exp-Availabilty ul {
+  display: flex;
+  gap: 40px;
+  margin: 0px;
+}
+
+@media (max-width: 491px) {
+  .hourly-exp-Availabilty ul {
+    display: block;
+  }
+}
+
+.hourly-exp-Availabilty ul li {
+  font-weight: bold;
+}
+
+.profile-description {
+  /* border: 1px solid black; */
+  margin-top: 5px;
+  width: 100%;
+  height: 6.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.skeleton-data {
+  margin: 20px 0px;
+}

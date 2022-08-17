@@ -1,0 +1,234 @@
+.search-navbar {
+  width: -2px !important;
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 0px !important;
+}
+
+.search-navbar.active {
+  opacity: 1;
+  visibility: visible;
+  width: 15rem !important;
+  margin-bottom: 0px !important;
+}
+
+.search-dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 0.3rem;
+  border-radius: 2rem;
+}
+
+.search-dropdown.active {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.ant-select-selector {
+  border: none;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.88, -0.55, 0.265, 1.55);
+}
+.search-box.active {
+  width: 310px;
+}
+.search-box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 50px;
+  background: #fff;
+  outline: none;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.search-box input.active {
+  opacity: 1;
+}
+.search-box input::placeholder {
+  color: #fffdfd;
+}
+.search-box .search-icon {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 45px;
+  width: 45px;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 44px;
+  font-size: 22px;
+  color: #664aff;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.search-box .search-icon.active {
+  right: 5px;
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+  font-size: 20px;
+  background: #664aff;
+  color: #fff;
+  transform: translateY(-50%) rotate(360deg);
+}
+.search-box .cancel-icon {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.search-box .cancel-icon.active {
+  right: 40px;
+  transform: translateY(-50%) rotate(360deg);
+}
+.search-box .search-data {
+  text-align: center;
+  padding-top: 7px;
+  color: #fff;
+  font-size: 18px;
+  word-wrap: break-word;
+}
+.search-box .search-data.active {
+  display: none;
+}
+
+.navbar-items {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  overflow-x: hidden;
+}
+
+.navbar-items-part-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-items-part-2 {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.navbar-logo {
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  /* grid-gap: 10px; */
+  list-style: none;
+  text-align: center;
+  /* width: 70vh;
+  justify-content: end;
+  margin-right: 2rem; */
+  margin-bottom: 0px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.nav-links {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.nav-links:hover {
+  background-color: rgb(233, 233, 233);
+  color: black;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+}
+
+@media (max-width: 715px) {
+  .navbar-items-part-1 {
+    display: block;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-menu-list {
+    margin: 20px 0px 20px 0px;
+  }
+
+  .navbar-items-part-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.2s ease-in;
+  }
+
+  .navbar-items-part-2.active {
+    background: white;
+    left: 0;
+    opacity: 1;
+    transition: all 0.2s ease-in;
+    z-index: 1;
+    padding: 0px 0px 20px 0px;
+  }
+
+  .nav-links.active {
+    padding: 5px;
+  }
+
+  .nav-links:hover {
+    background-color: rgb(230, 230, 230);
+    border-radius: 0;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    transform: translate(15%, 35%);
+    margin-left: 0px;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 50%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}

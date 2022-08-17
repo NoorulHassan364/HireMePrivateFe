@@ -1,0 +1,16 @@
+.handy-cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.handy-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 230px;
+  text-align: center;
+}

@@ -1,0 +1,68 @@
+.care-giver-profile-main {
+  padding: 3px;
+  margin: 5px;
+  display: flex;
+  min-height: 70vh;
+}
+
+.profile-parent {
+  padding: 30px 50px 20px 50px;
+  background-color: #ebebeb;
+  height: auto;
+}
+
+@media (max-width: 528px) {
+  .profile-parent {
+    padding: 5px 1px 5px 1px;
+  }
+}
+
+.profile-account {
+  width: 45rem;
+  margin: auto;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .profile-account {
+    width: auto !important;
+  }
+}
+
+/* .care-giver-profile {
+  height: 100%;
+} */
+
+.wrapping-pro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .wrapping-pro {
+    width: 100%;
+    gap: 0;
+    display: block;
+  }
+}
+
+.profile-pro {
+  position: relative;
+  width: 110px;
+}
+
+.ant-upload-list {
+  display: none;
+}
+
+.camera-icon-pro {
+  position: absolute;
+  bottom: 6px;
+  right: 5px;
+  background-color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}

@@ -1,0 +1,108 @@
+.container-pro {
+  padding: 100px 200px 100px 200px;
+  background-color: #ebebeb;
+}
+
+@media (max-width: 1100px) {
+  .container-pro {
+    padding: 50px 100px 50px 100px;
+  }
+}
+
+@media (max-width: 690px) {
+  .container-pro {
+    padding: 10px 40px 10px 40px;
+  }
+}
+
+@media (max-width: 425px) {
+  .container-pro {
+    padding: 10px 4px 10px 4px;
+  }
+}
+
+.section-1-pro {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 12px 12px 12px 12px;
+  border-radius: 20px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.profile-pro {
+  position: relative;
+  width: 110px;
+}
+
+.ant-upload-list {
+  display: none;
+}
+
+.camera-icon-pro {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  background-color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.title-pro {
+  font-weight: 500;
+  margin: 15px 0px 0px 0px;
+  font-size: 20px;
+}
+
+.email-pro,
+.address-pro,
+.designation-pro {
+  color: gray;
+  font-size: 14px;
+  max-width: 170px;
+}
+
+.section-2-pro {
+  flex-grow: 6;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 5px 20px 5px 20px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.wrapping-pro {
+  /* /* display: flex; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 523px) {
+  .wrapping-pro {
+    gap: 0px;
+    display: block;
+  }
+}
+
+.name-item-pro {
+  flex-grow: 4;
+}
+
+.email-item-pro {
+  flex-grow: 4;
+}
+
+.phone-item-pro {
+  flex-grow: 4;
+}
+
+.zipcode-item-pro {
+  flex-grow: 4;
+}
