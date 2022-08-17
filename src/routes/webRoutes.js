@@ -93,6 +93,7 @@ export default function AppRoutes() {
             </ProtectedCareTaker>
           }
         />
+
         <Route
           exact
           path="/care-taker-member/*"
