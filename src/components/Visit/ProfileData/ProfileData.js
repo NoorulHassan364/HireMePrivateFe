@@ -101,6 +101,8 @@ const ProfileData = ({ users }) => {
       UserAPI.postReview(id, { review, rating, name }).then((res) => {
         console.log(res);
         if (res.status == 200) {
+          setReview("");
+          setRating("");
           setModalVisible(false);
           setData(res?.data?.data);
           // console.log(res?.data?.data);
