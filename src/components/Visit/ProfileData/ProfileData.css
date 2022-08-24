@@ -13,10 +13,14 @@
   .profile-data-main {
     display: block;
   }
+  .profile-data-1 {
+    width: 100% !important;
+  }
 }
 
 .profile-data-1 {
   padding: 10px;
+  width: 700px;
 }
 
 .profile-data-2 {
@@ -126,9 +130,9 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.bio-description-pd {
+/* .bio-description-pd {
   max-width: 600px;
-}
+} */
 
 .about-pd {
   background-color: white;
@@ -144,4 +148,39 @@
   padding: 15px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.msg-btn {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+  background-color: #b78361;
+  color: white;
+  text-align: center;
+  padding: 5px 0px;
+  cursor: pointer;
+}
+
+@media (max-width: 880px) {
+  .msg-btn {
+    width: 40%;
+  }
+}
+
+.review-input {
+  border-color: gray;
+}
+
+.reviews-section {
+  background-color: white;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.ant-comment-content-author-name {
+  width: 100%;
 }

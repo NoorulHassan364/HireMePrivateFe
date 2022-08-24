@@ -27,6 +27,7 @@ const Home = () => {
   const [favData, setFavData] = React.useState([]);
   const [viewData, setViewData] = React.useState([]);
   const [favorite, setFavorite] = React.useState([]);
+  const [service, setService] = React.useState();
   const user_id = JSON.parse(localStorage.getItem("user"))._id;
 
   React.useEffect(() => {
@@ -35,6 +36,7 @@ const Home = () => {
 
   React.useEffect(() => {
     UserAPI.getUser(user_id).then((res) => {
+      setService(res?.data?.data?.service);
       UserAPI.getBestMatch(res?.data?.data?.service).then((res) => {
         setState(res?.data?.data);
       });
@@ -243,7 +245,7 @@ const Home = () => {
             </div>
           </div>
           <div className="handy-main">
-            <HandyCard />
+            <HandyCard service={service} />
           </div>
           <div className="job-card-main">
             <JobCard />

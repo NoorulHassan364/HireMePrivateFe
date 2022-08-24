@@ -44,6 +44,10 @@ class Routes {
   getView(_id) {
     return axios.get(`/user/getView/${_id}`);
   }
+
+  postReview(_id, data) {
+    return axios.patch(`/user/postReview/${_id}`, data);
+  }
 }
 
 export default new Routes();

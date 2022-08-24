@@ -1,5 +1,14 @@
 import React from "react";
-import { Avatar, Image, Rate, Typography, Button } from "antd";
+import {
+  Avatar,
+  Image,
+  Rate,
+  Typography,
+  Button,
+  Modal,
+  Input,
+  Comment,
+} from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import "./ProfileData.css";
 import { UserAPI } from "../../../api";
@@ -17,6 +26,7 @@ import {
 import Icon, { HomeOutlined } from "@ant-design/icons";
 
 const { Title } = Typography;
+const { TextArea } = Input;
 
 const HeartSvg = () => (
   <svg width="1em" height="1em" fill="currentColor" viewBox="0 0 1024 1024">
@@ -31,7 +41,11 @@ const ProfileData = ({ users }) => {
   const [data, setData] = React.useState();
   const [relatedData, setRelatedData] = React.useState([]);
   const [state, setState] = React.useState(false);
+  const [rating, setRating] = React.useState();
+  const [review, setReview] = React.useState();
   const [favorite, setFavorite] = React.useState([]);
+  const [name, setName] = React.useState();
+  const [modalVisible, setModalVisible] = React.useState(false);
   const navigate = useNavigate();
   const user_id = JSON.parse(localStorage.getItem("user"))?._id;
 
@@ -43,7 +57,9 @@ const ProfileData = ({ users }) => {
       UserAPI.getCareGiver(res?.data?.data?.service).then((res) => {
         console.log(res?.data?.data);
         // const result = res?.data?.data?.filter((item) => item._id != id);
-        setRelatedData(res?.data?.data?.filter((item) => item._id != id));
+        setRelatedData(
+          res?.data?.data?.slice(0, 6)?.filter((item) => item._id != id)
+        );
       });
     });
     console.log(relatedData);
@@ -56,6 +72,7 @@ const ProfileData = ({ users }) => {
     UserAPI.getUser(id).then((res) => {
       console.log(res?.data?.data);
       setFavorite(res?.data?.data?.favorites);
+      setName(res?.data?.data?.name);
     });
   };
 
@@ -78,8 +95,58 @@ const ProfileData = ({ users }) => {
     else return false;
   };
 
+  const postReview = () => {
+    if (review && rating && id && name) {
+      console.log(review, rating, id, name);
+      UserAPI.postReview(id, { review, rating, name }).then((res) => {
+        console.log(res);
+        if (res.status == 200) {
+          setModalVisible(false);
+          setData(res?.data?.data);
+          // console.log(res?.data?.data);
+        }
+      });
+    }
+  };
+
+  const openModal = () => {
+    if (user_id) {
+      setModalVisible(true);
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <>
+      <Modal
+        title="Write a Review"
+        centered
+        visible={modalVisible}
+        onOk={postReview}
+        onCancel={() => setModalVisible(false)}
+        okText="Submit"
+      >
+        <div>
+          <div>
+            <h3>Rate: </h3>
+            <Rate onChange={(e) => setRating(e)} />
+          </div>
+          <div>
+            <h3>Review: </h3>
+            <TextArea
+              autoSize={{
+                minRows: 3,
+                maxRows: 5,
+              }}
+              placeholder="write a review..."
+              className="review-input"
+              value={review}
+              onChange={(e) => setReview(e.target.value)}
+            />
+          </div>
+        </div>
+      </Modal>
       <div className="profile-data-container">
         <div className="profile-data-main">
           <div className="profile-data-1">
@@ -223,22 +290,68 @@ const ProfileData = ({ users }) => {
               <Title level={4}>About</Title>
               <div className="bio-description-pd">{data?.bioDescription}</div>
             </div>
+            <div className="reviews-section">
+              <Title level={4}>Reviews</Title>
+              {data?.reviews?.length == 0 ? (
+                <div
+                  style={{
+                    textAlign: "center",
+                    fontSize: "18px",
+                    fontWeight: "500",
+                    padding: "20px 0px 30px 0px",
+                  }}
+                >
+                  No Reviews available
+                </div>
+              ) : (
+                <div>
+                  {data?.reviews?.map((item) => {
+                    return (
+                      <Comment
+                        author={
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <h3>{item?.name}</h3>
+                            <Rate
+                              style={{ fontSize: "15px" }}
+                              disabled={true}
+                              defaultValue={item?.rating}
+                            />
+                          </div>
+                        }
+                        avatar={
+                          <Avatar
+                            src="https://joeschmoe.io/api/v1/random"
+                            alt="profile"
+                          />
+                        }
+                        content={<p>{item?.review}</p>}
+                      />
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           </div>
           <div className="profile-data-2">
             <div className="message-rate">
-              <Rate disabled defaultValue={4} />
-              <div>Responds within Hours</div>
-              <Button
+              <div
                 style={{
-                  width: "100%",
-                  borderRadius: "15px",
-                  marginTop: "10px",
-                  backgroundColor: "#b78361",
-                  color: "white",
+                  backgroundColor: "#e1e1e1",
+                  padding: "5px 10px",
+                  borderRadius: "10px",
+                  cursor: "pointer",
                 }}
+                onClick={openModal}
               >
-                Message
-              </Button>
+                write a review
+              </div>
+              <div>Responds within Hours</div>
+              <div className="msg-btn">Message</div>
             </div>
             <div className="related-data">
               <Title level={4}>People You May Know</Title>
